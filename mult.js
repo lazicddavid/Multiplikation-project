@@ -4,3 +4,9 @@
 //ukoliko jeste, povecati skor
 //ukoliko nije, smanjiti skor
 //u svakom slucaju, ponovo izgenerisati dva random broja
+
+const dugme = document.getElementById("dugmne");
+
+dugme.addEventListener("click", function () {
+  document.body.style.backgroundcolor = "red";
+});

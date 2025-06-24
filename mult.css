@@ -9,13 +9,3 @@ body {
   background-color: bisque;
 }
 */
-const dugme = document.getElementById("dugme");
-
-dugme.addEventListener("click", function() {
-  document.body.style.backgroundColor = "lightblue";
-});
-
-
- dugme.addEventListener("click", () => {
-  document.body.style.backgroundColor = "lightblue";
-});
