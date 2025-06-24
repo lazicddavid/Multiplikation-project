@@ -6,3 +6,10 @@
 //u svakom slucaju, ponovo izgenerisati dva random broja
 
 const tasteri = document.querySelectorAll(".boja");
+
+tasteri.forEach((taster) => {
+  taster.addEventListener("click", function (e) {
+    console.log("kliknuto:", e.target.textContent);
+    e.target.style.backgroundColor = "gray";
+  });
+});
