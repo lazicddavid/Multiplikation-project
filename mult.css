@@ -4,3 +4,11 @@ body {
   text-align: center;
   padding-top: 50px;
 }
+
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  margin: auto;
+}
