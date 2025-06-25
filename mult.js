@@ -10,7 +10,7 @@ let number1 = Math.floor(Math.random() * 10) + 1;
 let number2 = Math.floor(Math.random() * 10) + 1;
 
 let score = 0;
-
+let userInput = "";
 const questionEl = document.getElementById("question");
 const inputEl = document.getElementById("input");
 const buttonEl = document.querySelector("button");
@@ -20,17 +20,22 @@ const scoreEl = document.getElementById("score");
 questionEl.textContent = `What is ${number1} multiplied by ${number2}?`;
 scoreEl.textContent = `Score: ${score}`;
 
-inputEl.addEventListener("input", () => {
-  buttonEl.disabled = inputEl.value.trim() === "";
+inputEl.addEventListener("input", (e) => {
+  if (e.target.value === "") return;
+  if (typeof Number(e.target.value) !== "number") return;
+  if (e.target.value === "" || typeof Number(e.target.value)) {
+    buttonEl.disabled = true;
+  }
+  buttonEl.disabled = false;
+  userInput = Number(e.target.value);
 });
 
 formEl.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const odgovorJe = +inputEl.value;
   const tacanOdgovor = number1 * number2;
 
-  if (odgovorJe === tacanOdgovor) {
+  if (userInput === tacanOdgovor) {
     score++;
   } else {
     score--;
