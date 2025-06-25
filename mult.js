@@ -4,6 +4,8 @@
 //ukoliko jeste, povecati skor
 //ukoliko nije, smanjiti skor
 //u svakom slucaju, ponovo izgenerisati dva random broja
+
+console.log("------------------");
 let number1 = Math.floor(Math.random() * 10) + 1;
 let number2 = Math.floor(Math.random() * 10) + 1;
 
@@ -46,3 +48,7 @@ function generisiNovaPitanja() {
   number2 = Math.floor(Math.random() * 10) + 1;
   questionEl.textContent = `What is ${number1} multiplied by ${number2}?`;
 }
+
+
+
+function
