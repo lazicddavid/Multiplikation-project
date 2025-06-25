@@ -49,6 +49,4 @@ function generisiNovaPitanja() {
   questionEl.textContent = `What is ${number1} multiplied by ${number2}?`;
 }
 
-
-
-function
+window.addEventListener("DOMContentLoaded", () => {});
