@@ -4,41 +4,25 @@
 //ukoliko jeste, povecati skor
 //ukoliko nije, smanjiti skor
 //u svakom slucaju, ponovo izgenerisati dva random broja
-
 let number1 = Math.floor(Math.random() * 10) + 1;
 let number2 = Math.floor(Math.random() * 10) + 1;
 
 let score = 0;
+
 const questionEl = document.getElementById("question");
 const inputEl = document.getElementById("input");
 const buttonEl = document.querySelector("button");
 const formEl = document.getElementById("form");
 const scoreEl = document.getElementById("score");
+
+questionEl.textContent = `What is ${number1} multiplied by ${number2}?`;
 scoreEl.textContent = `Score: ${score}`;
 
-const input = document.getElementById("userInput");
-const button = document.getElementById("submit");
+inputEl.addEventListener("input", () => {
+  buttonEl.disabled = inputEl.value.trim() === "";
+});
 
-
-input.addEventListener('input', () => {
-
-  if (input.value.trim() === '') {
-    button.disabled = true;
-  } else {
-    button.disabled = false;
-  }
-questionEl.textContent = `What is ${number1} multiplied by ${number2}?`;
-
-inputEl.oninput = function () {
-  if (inputEl.value !== "") {
-    buttonEl.disabled = false;
-  } else {
-    buttonEl.disabled = true;
-    console.log("enter number");
-  }
-};
-
-formEl.onsubmit = function (e) {
+formEl.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const odgovorJe = +inputEl.value;
@@ -53,8 +37,9 @@ formEl.onsubmit = function (e) {
   scoreEl.textContent = `Score: ${score}`;
   inputEl.value = "";
   buttonEl.disabled = true;
+
   generisiNovaPitanja();
-};
+});
 
 function generisiNovaPitanja() {
   number1 = Math.floor(Math.random() * 10) + 1;
