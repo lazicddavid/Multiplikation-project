@@ -31,8 +31,13 @@ inputEl.addEventListener("input", (e) => {
 });
 
 
-inputEl.addEventListener("input" (e) =>
+inputEl.addEventListener("input", (e) => {  
 if (e.target.value === "") return; 
+if (typeof Number(e.target.value) !== "number") return;
+if (e.target.value === "" || typeof Number(e.target.value)) {
+  buttonEl.disabled = true;
+}
+
 
 
 )
