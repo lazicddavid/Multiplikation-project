@@ -5,6 +5,8 @@
 //ukoliko nije, smanjiti skor
 //u svakom slucaju, ponovo izgenerisati dva random broja
 
+const { use } = require("react");
+
 console.log("------------------");
 let number1 = Math.floor(Math.random() * 10) + 1;
 let number2 = Math.floor(Math.random() * 10) + 1;
@@ -30,24 +32,15 @@ inputEl.addEventListener("input", (e) => {
   userInput = Number(e.target.value);
 });
 
-
-inputEl.addEventListener("input", (e) => {  
-if (e.target.value === "") return; 
-if (typeof Number(e.target.value) !== "number") return;
-if (e.target.value === "" || typeof Number(e.target.value)) {
-  buttonEl.disabled = true;
-}
-
-
-
-)
-
-
-
-
-
-
-
+inputEl.addEventListener("input", (e) => {
+  if (e.target.value === "") return;
+  if (typeof Number(e.target.value) !== "number") return;
+  if (e.target.value === "" || typeof Number(e.target.value)) {
+    buttonEl.disabled = true;
+  }
+  buttonEl.disabled = false;
+  userInput = Number(e.target.vallue);
+});
 
 formEl.addEventListener("submit", function (e) {
   e.preventDefault();
