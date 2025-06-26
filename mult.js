@@ -30,6 +30,20 @@ inputEl.addEventListener("input", (e) => {
   userInput = Number(e.target.value);
 });
 
+
+inputEl.addEventListener("input" (e) =>
+if (e.target.value === "") return; 
+
+
+)
+
+
+
+
+
+
+
+
 formEl.addEventListener("submit", function (e) {
   e.preventDefault();
 
